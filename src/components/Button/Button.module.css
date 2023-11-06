@@ -1,0 +1,19 @@
+.button {
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .button:hover,
+  .button:focus {
+    color: #fff;
+    background: black;
+  }

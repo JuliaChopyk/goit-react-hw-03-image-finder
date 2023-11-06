@@ -1,30 +1,18 @@
 import React from 'react';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import PropTypes from 'prop-types';
 
-const Button = ({ page, per_page, totalHits, handleOnClick }) => {
-  const handleOnClickButton = () => {
-    const howPage = Math.ceil(totalHits / per_page);
-    console.log(howPage);
-    if (page > howPage) {
-      Notify.warning(
-        "End of search results."
-      );
-      return;
-    }
-    else {
-      page += 1;
-      handleOnClick(page);
-      return;
-    }
-  };
-
+const Button = ({ onClick }) => {
   return (
-    <section>
-      <button onClick={handleOnClickButton}>
+    <div>
+      <button className={ Button } type="button" onClick={onClick}>
         Load more
       </button>
-    </section>
+    </div>
   );
+};
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Button;
